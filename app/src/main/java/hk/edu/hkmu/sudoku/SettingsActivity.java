@@ -1,0 +1,28 @@
+package hk.edu.hkmu.sudoku;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.preference.PreferenceFragmentCompat;
+
+// Activity for showing the preference screen.
+public class SettingsActivity extends AppCompatActivity {
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Fragment fragment = new SettingPreferenceFragment();
+        FragmentTransaction txn = getSupportFragmentManager().beginTransaction();
+        txn.replace(android.R.id.content, fragment);
+        txn.commit();
+    }
+
+    /** Subclass of PreferenceFragment to add preferences from resource. */
+    public static class SettingPreferenceFragment extends PreferenceFragmentCompat {
+        @Override
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            addPreferencesFromResource(R.xml.app_preferences);
+        }
+    }
+}
