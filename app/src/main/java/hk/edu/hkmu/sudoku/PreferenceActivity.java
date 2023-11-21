@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceFragmentCompat;
 
 // Activity for showing the preference screen.
-public class SettingsActivity extends AppCompatActivity {
-    /** Called when the activity is first created. */
+public class PreferenceActivity extends AppCompatActivity {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
     public static class SettingPreferenceFragment extends PreferenceFragmentCompat {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            addPreferencesFromResource(R.xml.app_preferences);
+            addPreferencesFromResource(R.xml.preferences);
         }
     }
+
 }

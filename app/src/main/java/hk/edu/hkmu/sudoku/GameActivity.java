@@ -29,7 +29,7 @@ public class GameActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.settings:
-                Intent intent = new Intent(GameActivity.this, SettingsActivity.class);
+                Intent intent = new Intent(GameActivity.this, PreferenceActivity.class);
                 startActivity(intent);
                 break;
 
